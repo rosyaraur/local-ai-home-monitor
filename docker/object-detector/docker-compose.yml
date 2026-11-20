@@ -1,0 +1,14 @@
+services:
+  ai-watchdog:
+    image: basic-detector
+    restart: unless-stopped
+    devices:
+      - /dev/snd:/dev/snd
+    group_add:
+      - audio
+    volumes:
+      - ./data/consume:/app/data/consume
+      - ./data/processed:/app/data/processed
+      - ./asound.conf:/etc/asound.conf:ro
+    environment:
+      - TZ=America/New_York

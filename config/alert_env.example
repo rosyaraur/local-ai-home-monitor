@@ -1,0 +1,13 @@
+# Copy to ~/.alert_env and run: chmod 600 ~/.alert_env
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=your-server-email@gmail.com
+SMTP_PASS=xxxx-xxxx-xxxx-xxxx
+ALERT_TO=your-personal-email@gmail.com
+
+# X-Sense Secondary Account (Optional)
+XSENSE_EMAIL=your-server-email@gmail.com
+XSENSE_PASS=your-xsense-password
+
+# CloudEdge Webhook Secret (Optional)
+DOORBELL_SECRET=replace-with-random-token

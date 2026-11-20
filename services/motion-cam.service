@@ -1,0 +1,13 @@
+[Unit]
+Description=V4L2 Webcam Motion Capture
+After=network.target
+
+[Service]
+User=<YOUR_USER>
+Group=video
+ExecStart=/usr/bin/python3 -s /home/<YOUR_USER>/motion_cam.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

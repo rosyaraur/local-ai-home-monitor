@@ -1,0 +1,11 @@
+# Set PYTHONPATH so scripts resolve src/common/notifier.py
+PYTHONPATH=/home/<YOUR_USER>/local-ai-home-monitor/src
+
+# Stock market alerts every 15 min during US market hours (Mon-Fri, 9 AM - 4 PM EST)
+*/15 9-16 * * 1-5 /usr/bin/python3 -s /home/<YOUR_USER>/local-ai-home-monitor/src/monitors/stock_monitor.py >> /home/<YOUR_USER>/stock_monitor.log 2>&1
+
+# Optional daily closing summary at 4:05 PM EST
+5 16 * * 1-5 /usr/bin/python3 -s /home/<YOUR_USER>/local-ai-home-monitor/src/monitors/stock_monitor.py --summary >> /home/<YOUR_USER>/stock_monitor.log 2>&1
+
+# X-Sense safety sensor polling every 5 minutes
+*/5 * * * * /home/<YOUR_USER>/xsense-venv/bin/python /home/<YOUR_USER>/local-ai-home-monitor/src/monitors/xsense_monitor.py >> /home/<YOUR_USER>/xsense_monitor.log 2>&1
